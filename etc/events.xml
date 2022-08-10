@@ -1,0 +1,6 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="checkout_cart_add_product_complete">
+        <observer name="checkout_cart_add_product_last_sku"
+                  instance="Agoris\PopupLastAddProductToCart\Observer\Cart\AddSkuInCustomerSessionObserver"/>
+    </event>
+</config>

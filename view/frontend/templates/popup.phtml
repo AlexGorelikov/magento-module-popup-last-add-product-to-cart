@@ -1,0 +1,22 @@
+<?php
+/** @var Magento\Framework\View\Element\Template $block */
+
+/** @var Agoris\PopupLastAddProductToCart\ViewModel\Popup\PopupViewModel $popupViewModel */
+$popupViewModel = $block->getPopupViewModel();
+?>
+<?php if ($popupViewModel->isEnable()):?>
+    <section data-bind="scope: 'popup-last-add-product-to-cart'">
+        <div class="cart-popup" data-bind="css: { 'cart-popup_show': isShow }">
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        </div>
+    </section>
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout() ?>
+            }
+        }
+    </script>
+<?php endif;?>
+
+

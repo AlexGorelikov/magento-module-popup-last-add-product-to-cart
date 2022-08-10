@@ -1,0 +1,17 @@
+<!-- ko foreach: { data: cartItems, as: 'cartItem' } -->
+    <div class="cart-popup-product-item">
+        <div class="cart-popup-product-item__image-wrapper">
+            <img data-bind="attr: cartItem.product_image" />
+        </div>
+        <div class="cart-popup-product-item__info">
+            <div class="cart-popup-product-item__name" data-bind="html: cartItem.product_name"></div>
+            <div class="cart-popup-product-item__options">
+                <!-- ko foreach: $parents[1].getRegion('optionsCartItem') -->
+                    <!-- ko template: {name: getTemplate(), data: cartItem.options, as: 'options'} --><!-- /ko -->
+                <!-- /ko -->
+            </div>
+            <div class="cart-popup-product-item__price" data-bind="html: cartItem.product_price"></div>
+        </div>
+    </div>
+<!-- /ko -->
+

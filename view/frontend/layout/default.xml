@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="before.body.end">
+            <block class="Magento\Framework\View\Element\Template" name="agoris_popup_last_add_product_sku"
+                   template="Agoris_PopupLastAddProductToCart::popup.phtml" >
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="types" xsi:type="array"/>
+                        <item name="components" xsi:type="array">
+                            <item name="popup-last-add-product-to-cart" xsi:type="array">
+                                <item name="component" xsi:type="string">Agoris_PopupLastAddProductToCart/js/view/popup-component</item>
+                                <item name="children" xsi:type="array">
+                                    <item name="defaultCartItem" xsi:type="array">
+                                        <item name="component" xsi:type="string">uiComponent</item>
+                                        <item name="displayArea" xsi:type="string">defaultCartItem</item>
+                                        <item name="config" xsi:type="array">
+                                            <item name="template" xsi:type="string">Agoris_PopupLastAddProductToCart/item/default</item>
+                                        </item>
+                                        <item name="children" xsi:type="array">
+                                            <item name="optionsCartItem" xsi:type="array">
+                                                <item name="component" xsi:type="string">uiComponent</item>
+                                                <item name="displayArea" xsi:type="string">optionsCartItem</item>
+                                                <item name="config" xsi:type="array">
+                                                    <item name="template" xsi:type="string">Agoris_PopupLastAddProductToCart/item/options</item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                    <argument name="popup_view_model" xsi:type="object">Agoris\PopupLastAddProductToCart\ViewModel\Popup\PopupViewModel</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

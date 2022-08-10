@@ -1,0 +1,17 @@
+<div class="cart-popup-header">
+    <h3 data-bind="i18n: 'Added to cart'"></h3>
+    <div class="buttons-actions">
+        <button class="buttons-actions__continue" data-bind="click: hidePopup(), i18n: 'Continue shopping'"></button>
+        <a class="buttons-actions__cart" data-bind="attr: {href: getCartUrl()}, i18n: 'View cart'"></a>
+    </div>
+</div>
+<div class="cart-popup-products-list">
+    <!-- ko foreach: getRegion('defaultCartItem') -->
+        <!-- ko template: {name: getTemplate(), data: $parent.cartItemsCollection, as: 'cartItems'} --><!-- /ko -->
+    <!-- /ko -->
+</div>
+<button class="button-close" data-bind="click: hidePopup()">
+    <svg viewBox="0 0 32 32">
+        <path d="M17.728 16l5.185-5.185c0.221-0.221 0.358-0.527 0.358-0.865 0-0.675-0.547-1.222-1.222-1.222-0.337 0-0.643 0.137-0.864 0.358v0l-5.185 5.187-5.185-5.187c-0.221-0.221-0.527-0.358-0.864-0.358-0.675 0-1.222 0.547-1.222 1.222 0 0.338 0.137 0.643 0.358 0.865l5.185 5.185-5.185 5.185c-0.221 0.221-0.358 0.527-0.358 0.865 0 0.675 0.547 1.222 1.222 1.222 0.337 0 0.643-0.137 0.864-0.358v0l5.185-5.187 5.185 5.187c0.221 0.221 0.527 0.358 0.864 0.358 0.675 0 1.222-0.547 1.222-1.222 0-0.338-0.137-0.643-0.358-0.865l-5.185-5.185z"></path>
+    </svg>
+</button>
